@@ -1,2 +1,9 @@
+# Ignore Node.js modules folder
 node_modules/
+
+# Ignore custom folder named OTHER
 OTHER/
+
+# Ignore SSH key files
+sshkey
+sshkey.pub
