@@ -1,0 +1,77 @@
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-body">
+      <h3 class="card-title">Update Data Cookies</h3>
+
+      <!-- Form untuk mengupdate data -->
+      <form
+        method="POST"
+        action="/update_cookies/<%= cookiesDetail.ID_Cookies %>"
+      >
+        <div class="mb-3">
+          <label for="namaCookies" class="form-label">Nama Cookies:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="namaCookies"
+            name="namaCookies"
+            value="<%= cookiesDetail.Nama %>"
+            required
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="hargaJual" class="form-label">Harga Jual:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="hargaJual"
+            name="hargaJual"
+            value="<%= cookiesDetail.Harga_Jual %>"
+            required
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="hargaProduksi" class="form-label">Harga Produksi:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="hargaProduksi"
+            name="hargaProduksi"
+            value="<%= cookiesDetail.Harga_Produksi %>"
+            required
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="detailCookies" class="form-label">Detail Cookies:</label>
+          <textarea
+            class="form-control"
+            id="detailCookies"
+            name="detailCookies"
+            rows="3"
+            required
+          >
+<%= cookiesDetail.Detail %></textarea
+          >
+        </div>
+
+        <div class="mb-3">
+          <label for="picLink" class="form-label">Link Gambar PIC:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="picLink"
+            name="picLink"
+            value="<%= cookiesDetail.PIC %>"
+            required
+          />
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary">Update Data</button>
+      </form>
+    </div>
+  </div>
+</div>

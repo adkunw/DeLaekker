@@ -1,0 +1,72 @@
+<!-- Add Cookies Page -->
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-body">
+      <h3 class="card-title">Tambah Data Cookies Baru</h3>
+      <form method="POST" action="/add_cookies">
+        <!-- Form Input: Nama Cookies -->
+        <div class="mb-3">
+          <label for="namaCookies" class="form-label">Nama Cookies:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="namaCookies"
+            name="namaCookies"
+            required
+          />
+        </div>
+
+        <!-- Form Input: Harga Jual -->
+        <div class="mb-3">
+          <label for="hargaJual" class="form-label">Harga Jual:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="hargaJual"
+            name="hargaJual"
+            required
+          />
+        </div>
+
+        <!-- Form Input: Harga Produksi -->
+        <div class="mb-3">
+          <label for="hargaProduksi" class="form-label">Harga Produksi:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="hargaProduksi"
+            name="hargaProduksi"
+            required
+          />
+        </div>
+
+        <!-- Form Input: Detail Cookies -->
+        <div class="mb-3">
+          <label for="detailCookies" class="form-label">Detail Cookies:</label>
+          <textarea
+            class="form-control"
+            id="detailCookies"
+            name="detailCookies"
+            rows="3"
+            required
+          ></textarea>
+        </div>
+
+        <!-- Form Input: Link Gambar PIC -->
+        <div class="mb-3">
+          <label for="picLink" class="form-label">Link Gambar PIC:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="picLink"
+            name="picLink"
+            required
+          />
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary">Tambahkan Data</button>
+      </form>
+    </div>
+  </div>
+</div>

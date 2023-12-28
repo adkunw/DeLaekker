@@ -1,0 +1,31 @@
+<!-- cookies_detail.ejs -->
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-body">
+      <h3 class="card-title"><%= cookiesDetail.Nama %></h3>
+      <div class="card-text">
+        <p class="mb-2">
+          <strong>Harga Jual:</strong> Rp. <%=
+          cookiesDetail.Harga_Jual.toLocaleString("id-ID") %>
+        </p>
+        <p class="mb-2">
+          <strong>Harga Produksi:</strong> Rp. <%=
+          cookiesDetail.Harga_Produksi.toLocaleString("id-ID") %>
+        </p>
+
+        <p class="mb-2"><strong>Detail :</strong> <%= cookiesDetail.Detail%></p>
+
+        <p class="mb-2"><strong>PIC :</strong> <%= cookiesDetail.PIC%></p>
+
+        <p class="mb-2">
+          <strong>Date:</strong>
+          <% const options = { weekday: 'long', day: 'numeric', month: 'long',
+          year: 'numeric', hour: 'numeric', minute: 'numeric', timeZoneName:
+          'short' }; %> <%= new Intl.DateTimeFormat('id-ID', options).format(new
+          Date(cookiesDetail.date)) %>
+        </p>
+        <!-- Tambahkan informasi detail cookies lainnya sesuai kebutuhan -->
+      </div>
+    </div>
+  </div>
+</div>

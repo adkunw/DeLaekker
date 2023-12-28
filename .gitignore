@@ -1,5 +1,6 @@
 # Ignore Node.js modules folder
 node_modules/
+.tmp.driveupload/
 
 # Ignore custom folder named OTHER
 OTHER/

@@ -1,0 +1,59 @@
+<!-- Update your HTML to add space between buttons -->
+<h1 style="text-align: center">THIS IS COOKIES DATA</h1>
+<a href="/cookies_add">
+  <button type="button" class="btn btn-primary">Add Data</button>
+</a>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Nama Cookies</th>
+      <th scope="col" style="text-align: center">Harga Jual</th>
+      <th scope="col" style="text-align: center">Harga Produksi</th>
+      <th scope="col" style="text-align: center">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% cookies.forEach(cookiesdata => { %>
+    <tr>
+      <td><%= cookiesdata.Nama %></td>
+      <td style="text-align: center">
+        Rp. <%= cookiesdata.Harga_Jual.toLocaleString("id-ID")%>
+      </td>
+      <td style="text-align: center">
+        Rp. <%= cookiesdata.Harga_Produksi.toLocaleString("id-ID")%>
+      </td>
+      <td>
+        <div class="d-flex justify-content-center">
+          <a
+            href="/detail/<%= cookiesdata.ID_Cookies %>"
+            class="btn btn-primary mr-2"
+            >Detail</a
+          >
+          <p></p>
+          <a
+            href="/update_cookies/<%= cookiesdata.ID_Cookies %>"
+            class="btn btn-success mr-2"
+            >Update</a
+          >
+          <!-- Tambahkan tombol delete dengan konfirmasi -->
+          <a
+            href="/delete_cookies/<%= cookiesdata.ID_Cookies %>"
+            class="btn btn-danger"
+            onclick="return confirmDelete()"
+            >Delete</a
+          >
+        </div>
+      </td>
+
+      <script>
+        function confirmDelete() {
+          var confirmation = confirm(
+            "Are you sure you want to delete this data?"
+          );
+          return confirmation;
+        }
+      </script>
+    </tr>
+    <% }) %>
+  </tbody>
+</table>
