@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="row">
+    <!-- Left Section: Data Produk -->
+    <div class="col-md-6">
+      <h2>Data Produk dan Jumlah Stok</h2>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Nama Produk</th>
+            <th scope="col" style="text-align: center">Stok Saat Ini</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Loop through your products data -->
+          <% stokData.forEach(product => { %>
+          <tr>
+            <td><%= product.Nama_Produk %></td>
+            <td style="text-align: center"><%= product.Jumlah %></td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Right Section: Data Detail Stok -->
+    <div class="col-md-6">
+      <h2>Data Detail Stok</h2>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">ID Stok</th>
+            <th scope="col">Nama</th>
+            <th scope="col">Tanggal</th>
+            <th scope="col">Jumlah</th>
+            <th scope="col">Keterangan</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Loop through your stock detail data -->
+          <% stokDetails.forEach(product => { %>
+          <tr>
+            <td><%= product.ID_Stok %></td>
+            <td><%= product.Nama_Produk %></td>
+            <td>
+              <%= (function() { const options = { weekday: "long", day:
+              "numeric", month: "long", year: "numeric", hour: "numeric",
+              minute: "numeric", timeZoneName: "short", }; return new
+              Date(product.created_at).toLocaleDateString("id-ID", options);
+              })() %>
+            </td>
+            <td><%= product.Jumlah %></td>
+            <td><%= product.keterangan %></td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -39,6 +39,30 @@ app.get("/cookies", async (req, res) => {
   }
 });
 
+// Mengarahkan ke halaman stok
+app.get("/stock", async (req, res) => {
+  try {
+    // Mendapatkan data cookies dari database
+    const stokData = await func.LoadStokData();
+
+    // Mendapatkan data stok dari database
+    // console.log(stokData);
+    const stokDetails = await func.LoadFullStockDetails();
+    // console.log(stokDetails);
+
+    // Render halaman stok dan kirim data cookies dan stok ke template
+    res.render("stock_cookies", {
+      layout: "layout/main-layout",
+      title: "Stok",
+      stokDetails,
+      stokData,
+    });
+  } catch (error) {
+    console.error(error.message);
+    res.status(500).send("Error server");
+  }
+});
+
 // Routing untuk halaman detail cookies berdasarkan ID_Cookies
 app.get("/detail/:id_cookies", async (req, res) => {
   try {

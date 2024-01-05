@@ -9,6 +9,7 @@
       <th scope="col">Nama Cookies</th>
       <th scope="col" style="text-align: center">Harga Jual</th>
       <th scope="col" style="text-align: center">Harga Produksi</th>
+      <th scope="col" style="text-align: center">Keuntungan</th>
       <th scope="col" style="text-align: center">Actions</th>
     </tr>
   </thead>
@@ -21,6 +22,10 @@
       </td>
       <td style="text-align: center">
         Rp. <%= cookiesdata.Harga_Produksi.toLocaleString("id-ID")%>
+      </td>
+      <td style="text-align: center">
+        Rp. <%= (cookiesdata.Harga_Jual -
+        cookiesdata.Harga_Produksi).toLocaleString("id-ID") %>
       </td>
       <td>
         <div class="d-flex justify-content-center">
